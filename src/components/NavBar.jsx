@@ -41,7 +41,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -116,8 +115,7 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem>
         <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-          </Badge>
+          <Badge badgeContent={4} color="error"></Badge>
         </IconButton>
         <p>Messages</p>
       </MenuItem>
@@ -127,8 +125,7 @@ export default function PrimarySearchAppBar() {
           aria-label="show 17 new notifications"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-          </Badge>
+          <Badge badgeContent={17} color="error"></Badge>
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
@@ -139,8 +136,7 @@ export default function PrimarySearchAppBar() {
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
-        >
-        </IconButton>
+        ></IconButton>
         <p>Profile</p>
       </MenuItem>
     </Menu>
@@ -148,7 +144,7 @@ export default function PrimarySearchAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: '#630a0a' }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -160,8 +156,7 @@ export default function PrimarySearchAppBar() {
             <IoMdMenu />
           </IconButton>
           <Search>
-            <SearchIconWrapper>
-            </SearchIconWrapper>
+            <SearchIconWrapper></SearchIconWrapper>
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
@@ -170,16 +165,14 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={421} color="error">
-              </Badge>
+              <Badge badgeContent={421} color="error"></Badge>
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={172} color="error">
-              </Badge>
+              <Badge badgeContent={172} color="error"></Badge>
             </IconButton>
             <IconButton
               size="large"
@@ -189,8 +182,7 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
-            >
-            </IconButton>
+            ></IconButton>
           </Box>
           <img src={imagem} style={{ width: 80 }} />
 
@@ -202,8 +194,7 @@ export default function PrimarySearchAppBar() {
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
-            >
-            </IconButton>
+            ></IconButton>
           </Box>
         </Toolbar>
       </AppBar>

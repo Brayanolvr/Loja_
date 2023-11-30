@@ -16,7 +16,7 @@ const Inicio = () => {
 
   return (
     <div>
-      <Navbar />
+     <Navbar /> 
       <button onClick={getPosts}>Get Posts</button>
       {useState.map((post) => (
         <div key={post.id}>
