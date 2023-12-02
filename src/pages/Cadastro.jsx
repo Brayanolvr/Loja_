@@ -13,7 +13,6 @@ const Cadastro = ({ onLogin }) => {
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const navigate = useNavigate();
 
-
   const validateName = () => {
     if (!name) {
       setNameError("Por favor, insira seu nome");
@@ -41,7 +40,6 @@ const Cadastro = ({ onLogin }) => {
       setPasswordError("");
     }
   };
-
 
   const validateConfirmPassword = () => {
     if (password !== confirmPassword) {
@@ -91,7 +89,6 @@ const Cadastro = ({ onLogin }) => {
 
   return (
     <section className="flex items-center justify-center h-[100vh]">
-
       <div className="flex flex-col items-center cover">
         <h2 className="m-[1rem] text-[30px]">Cadastre-se</h2>
         <form

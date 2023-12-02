@@ -37,12 +37,22 @@ const ProfileScreen = () => {
 
   async function setProfile() {
     try {
-      const { data } = await axios.get("https://localhost:3000/auth/authenticate");
-      setProfileInfo(data);
+      const response = await axios.get("http://localhost:3000/auth/register");
+      
+      if (response.status === 200) {
+        const userData = response.data;
+        setProfileInfo(userData);
+      } else {
+        console.error('Erro ao obter dados do perfil. Status:', response.status);
+      }
     } catch (error) {
-      console.error('Error fetching profile:', error);
+      console.error('Erro ao obter dados do perfil:', error);
     }
   }
+
+  useEffect(() => {
+    setProfile();
+  }, []);
 
   const iconStyle = {
     fontSize: '40px',
@@ -56,21 +66,21 @@ const ProfileScreen = () => {
   };
 
   const photoIconStyle = {
-    fontSize: '150%',
+    fontSize: '200%',
     color: '#FFFFFF',
     cursor: 'pointer',
     position: 'absolute',
-    top: '50%',
-    left: '50%',
+    top: '30px',
+    left: '30px',
     transform: 'translate(-50%, -50%)',
+
   };
 
   const cardStyle = {
     width: '22%',
     borderRadius: '5%',
     background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(71,18,18,20) 40%)',
-    zIndex: 1,
-    marginTop: '-17vh',
+    marginTop: '-30rem',
   };
 
   const containerStyle = {
@@ -79,28 +89,28 @@ const ProfileScreen = () => {
     justifyContent: 'center',
     minHeight: '100vh',
     padding: "20vh",
-    backgroundColor: '#fffaf7',  
+    backgroundColor: '#fffaf7',
   };
 
   const imageContainerStyle = {
     marginBottom: '1%',
     position: 'relative',
-    width: '11vh',
-    height: '11vh',
-    overflow: 'hidden',
+    width: '8vh',
+    height: '8vh',
     borderRadius: '50%',
     left: '12%',
     transform: 'translate(-50%, -50%)',
-    top: '20%',
+    top: '4rem',
   };
 
   const labelStyle = {
     cursor: 'pointer',
-    position: 'absolute',
-    top: '50%',
-    left: '100%',
+    position: 'relative',
+    bottom: '1vh',
+    right: '-6vh',
     transform: 'translate(-50%, -50%)',
   };
+  
 
   return (
     <div>
@@ -117,8 +127,8 @@ const ProfileScreen = () => {
               />
               <label htmlFor="upload-photo" style={labelStyle}>
                 <AddAPhoto style={photoIconStyle} />
+                <input id="upload-photo" type="file" onChange={uploadProfileImage} style={{ display: 'none'}}  />
               </label>
-              <input id="upload-photo" type="file" onChange={uploadProfileImage} style={{ display: 'none' }} />
             </div>
             <div style={iconContainerStyle}>
               <Favorite onClick={() => handleTabClick('Favoritos')} style={iconStyle} />
