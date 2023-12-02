@@ -28,140 +28,139 @@ const Posts = () => {
 
   return (
     <div>
-      <Navbar /> 
-    <div style={{ display: "flex", justifyContent: "center", padding: "3rem 0" }}>
-      <div
-        style={{
-          backgroundColor: "#a0a0a0",
-          padding: "30px 70px",
-          borderRadius: "15px",
-        }}
-      >
-        <h1
+      <Navbar />
+      <div style={{ display: "flex", justifyContent: "center", padding: "3rem 0" }}>
+        <div
           style={{
-            fontFamily: "Heebo",
-            fontWeight: 800,
-            textAlign: "center",
-            color: "#fff",
-            fontSize: "3rem",
-            marginBottom: "5px",
+            background: "#630a0a",
+            padding: "30px 70px",
+            borderRadius: "15px",
           }}
         >
-          Postar
-        </h1>
-        <div style={{ height: "2px", backgroundColor: "#000000" }}></div>
+          <h1
+            style={{
+              fontFamily: "Heebo",
+              fontWeight: 800,
+              textAlign: "center",
+              color: "#fff",
+              fontSize: "3rem",
+              marginBottom: "5px",
+            }}
+          >
+            Postar
+          </h1>
+          <div style={{ height: "2px", backgroundColor: "#000000" }}></div>
 
-        <form style={{ marginTop: "25px" }} onSubmit={(e) => e.preventDefault()}>
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "7px",
-                fontSize: "1.2rem",
-                fontFamily: "Poppins",
-              }}
-            >
-              Nome do Produto:
-              <input
-                type="text"
-                name="productName"
-                value={productName}
-                onChange={(e) => setProductName(e.target.value)}
+          <form style={{ marginTop: "25px" }} onSubmit={(e) => e.preventDefault()}>
+            <div style={{ marginBottom: "20px" }}>
+              <label
                 style={{
-                  width: "100%",
+                  display: "block",
+                  marginBottom: "7px",
+                  fontSize: "1.2rem",
+                  fontFamily: "Poppins",
+                }}
+              >
+                Nome do Produto:
+                <input
+                  type="text"
+                  name="productName"
+                  value={productName}
+                  onChange={(e) => setProductName(e.target.value)}
+                  style={{
+                    width: "100%",
+                    color: "#000000",
+                    borderRadius: "10px",
+                    border: "0",
+                    outline: "0",
+                    fontSize: "1.2rem",
+                    paddingLeft: "15px",
+                    height: "45px",
+                  }}
+                />
+              </label>
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <label
+                style={{
+                  display: "block",
+                  marginBottom: "7px",
+                  fontSize: "1.2rem",
+                  fontFamily: "Poppins",
+                }}
+              >
+                Link do Produto:
+                <input
+                  type="text"
+                  name="productLink"
+                  value={productLink}
+                  onChange={(e) => setProductLink(e.target.value)}
+                  style={{
+                    width: "100%",
+                    color: "#000000",
+                    borderRadius: "10px",
+                    border: "0",
+                    outline: "0",
+                    fontSize: "1.2rem",
+                    paddingLeft: "15px",
+                    height: "45px",
+                  }}
+                />
+              </label>
+            </div>
+            <div style={{ marginBottom: "20px" }}>
+              <label
+                style={{
+                  display: "block",
+                  marginBottom: "7px",
+                  fontSize: "1.2rem",
                   color: "#000000",
-                  borderRadius: "10px",
-                  border: "0",
-                  outline: "0",
-                  fontSize: "1.2rem",
-                  paddingLeft: "15px",
-                  height: "45px",
+                  fontFamily: "Poppins",
                 }}
-              />
-            </label>
-          </div>
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "7px",
-                fontSize: "1.2rem",
-                fontFamily: "Poppins",
-              }}
-            >
-              Link do Produto:
-              <input
-                type="text"
-                name="productLink"
-                value={productLink}
-                onChange={(e) => setProductLink(e.target.value)}
+              >
+                Descrição do Produto:
+                <textarea
+                  name="productDescription"
+                  value={productDescription}
+                  onChange={(e) => setProductDescription(e.target.value)}
+                  style={{
+                    width: "100%",
+                    borderRadius: "10px",
+                    border: "0",
+                    outline: "0",
+                    fontSize: "1.2rem",
+                    paddingLeft: "15px",
+                    height: "190px",
+                    resize: "none",
+                    paddingTop: "10px",
+                  }}
+                ></textarea>
+              </label>
+            </div>
+            <div style={{ marginTop: "30px", textAlign: "center" }}>
+              <button
+                onClick={createPost}
                 style={{
-                  width: "100%",
-                  color: "#000000",
-                  borderRadius: "10px",
+                  boxShadow: "0px 10px 40px #2b2727",
+                  fontFamily: "Heebo",
+                  fontWeight: 800,
+                  fontSize: "1.3rem",
+                  padding: "5px 50px",
+                  color: "#fff",
+                  backgroundColor: "#111111",
                   border: "0",
-                  outline: "0",
-                  fontSize: "1.2rem",
-                  paddingLeft: "15px",
-                  height: "45px",
-                }}
-              />
-            </label>
-          </div>
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              style={{
-                display: "block",
-                marginBottom: "7px",
-                fontSize: "1.2rem",
-                color: "#000000",
-                fontFamily: "Poppins",
-              }}
-            >
-              Descrição do Produto:
-              <textarea
-                name="productDescription"
-                value={productDescription}
-                onChange={(e) => setProductDescription(e.target.value)}
-                style={{
-                  width: "100%",
                   borderRadius: "10px",
-                  border: "0",
-                  outline: "0",
-                  fontSize: "1.2rem",
-                  paddingLeft: "15px",
-                  height: "190px",
-                  resize: "none",
-                  paddingTop: "10px",
+                  cursor: "pointer",
                 }}
-              ></textarea>
-            </label>
-          </div>
-          <div style={{ marginTop: "30px", textAlign: "center" }}>
-            <button
-              onClick={createPost}
-              style={{
-                boxShadow: "0px 10px 40px #2b2727",
-                fontFamily: "Heebo",
-                fontWeight: 800,
-                fontSize: "1.3rem",
-                padding: "5px 50px",
-                color: "#fff",
-                backgroundColor: "#111111",
-                border: "0",
-                borderRadius: "10px",
-                cursor: "pointer",
-              }}
-            >
-              Criar Post
-            </button>
-          </div>
-        </form>
+              >
+                Criar Post
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    </div>
   );
-
 };
 
 export default Posts;
