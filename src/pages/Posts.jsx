@@ -12,7 +12,7 @@ const Posts = () => {
   const createPost = async () => {
     try {
       const response = await axios.post(
-        "https://2f8a-45-226-91-98.ngrok.io/post/postagem",
+        "http://localhost:3000/post/postagem",
         {
           productName,
           productLink,

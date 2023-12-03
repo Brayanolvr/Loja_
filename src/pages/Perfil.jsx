@@ -79,7 +79,7 @@ const ProfileScreen = () => {
   const cardStyle = {
     width: '22%',
     borderRadius: '5%',
-    background: 'linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(71,18,18,20) 40%)',
+    background: 'linear-gradient(180deg, #000 0%, #471212 40%)',
     marginTop: '-30rem',
   };
 
