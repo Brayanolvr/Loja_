@@ -4,6 +4,7 @@ import Navbar from "../components/NavBar";
 
 const Posts = () => {
   const [productName, setProductName] = useState("");
+  const [imageUrl, setimageUrl] = useState("");
   const [productLink, setProductLink] = useState("");
   const [productDescription, setProductDescription] = useState("");
   const [posting, setPosting] = useState(null);
@@ -109,6 +110,35 @@ const Posts = () => {
                   }}
                 />
               </label>
+              <div style={{ marginBottom: "20px"}}>
+                <label
+                  style={{
+                    display: "block",
+                    marginBottom: "7px",
+                    fontSize: "1.2rem",
+                    fontFamily: "Poppins",
+                  }}
+                >
+                  Url da imagem:
+                  <input
+                    type="text"
+                    name="ImageUrl"
+                    value={imageUrl}
+                    onChange={(e) => setimageUrl(e.target.value)}
+                    style={{
+                      width: "100%",
+                      color: "#000000",
+                      borderRadius: "10px",
+                      border: "0",
+                      outline: "0",
+                      fontSize: "1.2rem",
+                      paddingLeft: "15px",
+                      height: "45px",
+                    }}
+                  />
+                  
+                </label>
+              </div>
             </div>
             <div style={{ marginBottom: "20px" }}>
               <label

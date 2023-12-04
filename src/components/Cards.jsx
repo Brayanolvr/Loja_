@@ -67,9 +67,9 @@ export default function RecipeReviewCard() {
     <CardContainer>
       {infoCards.map((infoCard) => (
         <CustomCard key={infoCard.id}>
-          <CardHeader title={infoCard.user} />
+          <CardHeader title={infoCard.productName} />
           <a href={infoCard.productLink} target="_blank" rel="noopener noreferrer">
-            <img src={infoCard.productLink}  alt="link da Promoçâo" />
+            <img src={infoCard.imageUrl}  alt="link da Promoçâo" />
           </a>
           <CardContent>
             <Typography variant="body2" color="text.secondary">
