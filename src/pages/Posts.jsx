@@ -17,8 +17,10 @@ const Posts = () => {
           productName,
           productLink,
           productDescription,
+          favorited: false,
+          imageUrl
         }
-      );
+      ); console.log("Publicado com  sucesso")
       setPosting(response.data);
     } catch (error) {
       setError("Erro ao criar post");
