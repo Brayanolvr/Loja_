@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
@@ -20,10 +19,10 @@ const CardContainer = styled('div')({
 });
 
 const CustomCard = styled(Card)({
-  width: '300px', // Set your desired width
-  margin: '10px', // Adjust margin as needed
+  width: '300px',
+  margin: '10px',
   '@media (max-width: 600px)': {
-    width: '100%', // Make cards full width on smaller screens
+    width: '100%',
   },
 });
 
@@ -69,7 +68,7 @@ export default function RecipeReviewCard() {
         <CustomCard key={infoCard.id}>
           <CardHeader title={infoCard.productName} />
           <a href={infoCard.productLink} target="_blank" rel="noopener noreferrer">
-            <img src={infoCard.imageUrl}  alt="link da Promoçâo" />
+            <img src={infoCard.imageUrl} alt="link da Promoçâo" />
           </a>
           <CardContent>
             <Typography variant="body2" color="text.secondary">

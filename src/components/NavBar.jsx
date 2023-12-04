@@ -166,10 +166,10 @@ export default function PrimarySearchAppBar() {
                 />
               </Search>
             </Box>
-          
-          
-            
-            
+
+
+
+
           </Box>
           <img src={imagem} style={{ width: 80 }} />
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
