@@ -1,11 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import axios from 'axios';
+import img1 from '../img/img1.png';
+import img2 from '../img/img2.png';
+import img3 from '../img/img3.png';
+import img4 from '../img/img4.png';
+
+// import axios from 'axios';
 
 export default function App() {
   const [infoCards, setInfoCards] = useState([]);
@@ -16,19 +21,19 @@ export default function App() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
 
-  async function CardInfo() {
-    try {
-      const { data } = await axios.get("http://localhost:3000/post/listar");
-      setInfoCards(data);
-      console.log(data);
-    } catch (error) {
-      console.error('Error fetching profile:', error);
-    }
-  }
-  useEffect(() => {
-    CardInfo();
-  }
-    , []);
+  // async function CardInfo() {
+  //   try {
+  //     const { data } = await axios.get("http://localhost:3000/post/listar");
+  //     setInfoCards(data);
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error('Error fetching profile:', error);
+  //   }
+  // }
+  // useEffect(() => {
+  //   CardInfo();
+  // }
+  //   , []);
 
   return (
     <>
@@ -47,7 +52,7 @@ export default function App() {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        {infoCards.map((infoCard) => (
+        {/* {infoCards.map((infoCard) => (
           <SwiperSlide key={infoCard._id}>
             <div className="card">
               <img style={{
@@ -58,7 +63,13 @@ export default function App() {
               }} src={infoCard.imageUrl} alt={infoCard.createdAt} />
             </div>
           </SwiperSlide>
-        ))}
+        ))} */}
+
+        <SwiperSlide><img src={img1} alt="Image 1" /></SwiperSlide>
+        <SwiperSlide><img src={img2} alt="Image 2" /></SwiperSlide>
+        <SwiperSlide><img src={img3} alt="Image 3" /></SwiperSlide>
+        <SwiperSlide><img src={img4} alt="Image 4" /></SwiperSlide>
+
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
